@@ -1,8 +1,13 @@
+// 區分本地開發/線上部署 BASE_URL
+const BASE_URL = process.env.NODE_ENV === 'deploy'
+ ? 'https://full-stack-todolist-project.onrender.com/'
+ : 'http://localhost:3000';
+ 
 // fetch API - POST
 export async function postTodos(title){
     if (!title) return;
 
-    const response = await fetch('http://localhost:3000/todos', {
+    const response = await fetch(`${BASE_URL}/todos`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title })
@@ -13,7 +18,7 @@ export async function postTodos(title){
 
 // fetch API - GET
 export async function getTodos(){
-    const response = await fetch('http://localhost:3000/todos');
+    const response = await fetch(`${BASE_URL}/todos`);
     const datas = await response.json();
     return datas;
 }
@@ -21,7 +26,7 @@ export async function getTodos(){
 // fetch API - DELETE
 export async function delTotos(id) {
     try {
-        const response = await fetch(`http://localhost:3000/todos/${id}`, {
+        const response = await fetch(`${BASE_URL}/todos/${id}`, {
             method: 'DELETE'
         });
         if ( !response.ok ) {
