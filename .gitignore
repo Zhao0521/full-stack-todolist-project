@@ -1,8 +1,9 @@
 # 忽略 Node.js 模組
 node_modules/
 
-# 忽略環境變數
+# 忽略環境變數檔
 .env
+.env.deploy
 
 # 忽略VSCode 的 個人化設定
 .vscode/
