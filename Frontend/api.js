@@ -1,7 +1,5 @@
 // 區分本地開發/線上部署 BASE_URL
-const BASE_URL = process.env.NODE_ENV === 'deploy'
- ? 'https://full-stack-todolist-project.onrender.com/'
- : 'http://localhost:3000';
+const BASE_URL = 'https://full-stack-todolist-project.onrender.com';
  
 // fetch API - POST
 export async function postTodos(title){
