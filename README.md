@@ -1,7 +1,7 @@
 # 專案名稱 TodoList – Full Stack Practice Project
 
-A simple full-stack TodoList application built with Vanilla JavaScript, Node.js (Express), and PostgreSQL.
-這是一個簡單的全端 TodoList 專案，前端使用 Vanilla JS，後端使用 Node.js + Express，資料庫使用 PostgreSQL。
+- A simple full-stack TodoList application built with Vanilla JavaScript, Node.js (Express), and PostgreSQL.
+- 這是一個簡單的全端 TodoList 專案，前端使用 Vanilla JS，後端使用 Node.js + Express，資料庫使用 PostgreSQL。
 
 ## 功能簡介 Features
 
@@ -39,7 +39,9 @@ A simple full-stack TodoList application built with Vanilla JavaScript, Node.js 
 ├   ├─render.js
 ├   ├─api.js
 ├─.env.example
+├─.gitignore
 ├─package.json
+├─package-lock.json
 └─README.md
 ```
 
@@ -63,12 +65,14 @@ CREATE TABLE todos(
 ```
 
 ## 環境設定檔 - 環境變數說明 (.env)
+```text
 DB_USER=your_db_user
 DB_HOST=localhost
 DB_NAME=todos_database
 DB_PASSWORD=your_db_password
 DB_PORT=5432
 PORT=3000
+```
 
 ## 安裝與啟動 Run Locally
 1. 安裝套件
