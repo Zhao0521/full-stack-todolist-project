@@ -1,15 +1,13 @@
 # 專案名稱 TodoList – Full Stack Practice Project
 
-- A simple full-stack TodoList application built with Vanilla JavaScript, Node.js (Express), and PostgreSQL.
-- 這是一個簡單的全端 TodoList 專案，前端使用 Vanilla JS，後端使用 Node.js + Express，資料庫使用 PostgreSQL。
+- A simple full-stack TodoList application built with Vanilla JavaScript, Node.js (Express), and PostgreSQL, fully deployed with cloud services.
 
 ## 功能簡介 Features
 
-- Create new todos
-- Fetch todo list from database
-- Delete todos
+- Create, fetch, and delete todos
 - RESTful API design
-- Basic modular frontend structure
+- Cloud-based backend and database
+- Frontend-backend separation with API communication
 
 ## 技術棧 Tech Stack
 
@@ -28,20 +26,25 @@
 - Fetch API
 - Git
 
+### Deployment
+- GitHub Pages (Frontend)
+- Render Web Service (Backend)
+- Render PostgreSQL (Database)
+
 ## 專案架構 Project Structure
 ```text
 ├─Backend/
-├   ├─server.js
 ├   ├─db.js
+├   ├─server.js
 ├─Frontend/
-├   ├─index.html
+├   ├─api.js
 ├   ├─main.js
 ├   ├─render.js
-├   ├─api.js
 ├─.env.example
 ├─.gitignore
-├─package.json
+├─index.html
 ├─package-lock.json
+├─package.json
 └─README.md
 ```
 
@@ -87,28 +90,55 @@ cp .env.example .env
 
 3. 啟動伺服器
 ```bash 
-node backend/server.js
-(npm start)
+node Backend/server.js
+# 或 npm start
 ```
 4. 開啟前端
 Open `index.html` with Live Server
 
+## Deployment
+
+### Frontend
+- 已部屬到 GitHub Pages ( branch: feature/deploy )
+- URL: https://zhao0521.github.io/full-stack-todolist-project/
+- 訪問此 URL 即可看到前端介面
+
+### Backend
+- 已部屬到 Render (免費方案)
+- URL: https://full-stack-todolist-project.onrender.com
+- API Endpoint 已配置 CORS ，前端可直接 fetch
+- ⚠️免費方案首次載入可能會稍慢(冷啟動延遲)
+
+### Database
+- Render PostgreSQL 雲端資料庫
+- 使用內部連線於 Render 後端服務連結
+- 外部連線可使用 pgAdmin 或 DBeaver 查看資料
+
+### 使用建議
+- 前端會自動呼叫 Render 後端 API
+- 若要在本地運行，請依 環境設定檔(.env)設置資料庫連線
+
+## Deployment Architecture
+- Frontend deployed on GitHub Pages as a static site
+- Backend deployed on Render as a Node.js web service
+- PostgreSQL hosted on Render
+
+## Deployment Notes
+- Backend uses Render internal database connection for security
+- SSL/TLS is required when connecting to Render PostgreSQL
+- DATABASE_URL is used for production environment configuration
+- Render free tier may cause cold start delays on first request
+
 ## What I Learned
-- RESTful API design
-- Client-server data flow
-- Basic database schema design
-- Async / await and fetch workflow
-- Separation of concerns in frontend modules
+- Designing RESTful APIs and managing client-server data flow
+- Building a full-stack project with separated frontend and backend
+- Deploying frontend and backend to cloud platforms
+- Handling environment variables for different environments
+- Connecting to cloud-hosted PostgreSQL with SSL/TLS
+- Debugging deployment-related issues (CORS, SSL, connection strings)
 
 ## Future Improvements
 - Add update (edit) todo feature
 - Add completed status toggle
 - User authentication
-
-## [GitHub Repo]
-
-## Deployment
-Frontend:
-Backend:
-Database:
 
