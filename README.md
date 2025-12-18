@@ -94,7 +94,9 @@ node Backend/server.js
 # 或 npm start
 ```
 4. 開啟前端
+```text
 Open `index.html` with Live Server
+```
 
 ## Deployment
 
