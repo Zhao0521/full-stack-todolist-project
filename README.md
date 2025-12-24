@@ -40,6 +40,8 @@
 ├   ├─api.js
 ├   ├─main.js
 ├   ├─render.js
+├─docs/
+├   ├─system-architecture.png
 ├─.env.example
 ├─.gitignore
 ├─index.html
@@ -47,6 +49,9 @@
 ├─package.json
 └─README.md
 ```
+
+## System Architecture & Data Flow
+![System Data Flow Diagram](docs/system-architecture.png)
 
 ## API 設計 API Endpoints
 ```text
